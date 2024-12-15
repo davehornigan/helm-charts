@@ -1,0 +1,11 @@
+apiVersion: v1
+appVersion: "2024.11.3"
+description: A Helm chart for installing ESP Home
+name: esphome
+version: 2024.11.3
+sources:
+  - https://github.com/davehornigan/helm-charts/tree/master/charts/esphome
+maintainers:
+  - name: DaveHornigan
+    email: dave@hornigan.pro
+    url: https://github.com/davehornigan
