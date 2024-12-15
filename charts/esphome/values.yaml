@@ -83,7 +83,7 @@ additionalVolumeMounts: []
 
 configVolumeClaim:
   # Creates volume claim with {esphome.fullname}-config name
-  create: false
+  create: true
   size: 5Gi
   storageClass: ""
   accessModes:
