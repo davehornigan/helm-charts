@@ -1,0 +1,18 @@
+{{- if .Values.configVolumeClaim.create }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "esphome.fullname" . }}-config
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "esphome.labels" . | nindent 4 }}
+spec:
+  {{- if .Values.configVolumeClaim.storageClass }}
+  storageClassName: {{ .Values.configVolumeClaim.storageClass }}
+  {{- end }}
+  accessModes:
+    {{- toYaml .Values.configVolumeClaim.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.configVolumeClaim.size }}
+  {{- end }}

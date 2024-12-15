@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-cm
+  namespace: {{ .Values.namespace }}
+data:
+  ESPHOME_DASHBOARD_USE_PING: "{{ .Values.envVars.usePing }}"
+  ESPHOME_DASHBOARD_RELATIVE_URL: "{{ .Values.envVars.relativeUrl }}"
+  ESPHOME_QUICKWIZARD: "{{ .Values.envVars.quickWizard }}"
+  ESPHOME_IS_HASSIO: "{{ .Values.envVars.isHassio }}"
+  DISABLE_HA_AUTHENTICATION: "{{ .Values.envVars.disableHaAuth }}"
