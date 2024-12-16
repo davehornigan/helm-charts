@@ -9,6 +9,7 @@ jobs:
   release:
     permissions:
       contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,7 +34,7 @@ jobs:
           owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
           repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
   
-          args=(--owner "$owner" --repo "$repo" --config "cr.yaml")
+          args=(--owner "$owner" --repo "$repo" --config "cr.yaml" --token "$CR_TOKEN")
   
           install="$RUNNER_TOOL_CACHE/cr/$(uname -m)"
           echo "$install" >> "$GITHUB_PATH"
