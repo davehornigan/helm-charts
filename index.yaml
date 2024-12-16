@@ -32,4 +32,20 @@ entries:
     urls:
     - https://github.com/davehornigan/helm-charts/releases/download/metube-2024.12.14/metube-2024.12.14.tgz
     version: 2024.12.14
-generated: "2024-12-16T02:47:47.134713524Z"
+  phpmyadmin:
+  - apiVersion: v1
+    appVersion: 5.2.1
+    created: "2024-12-16T03:01:03.691864911Z"
+    description: A Helm chart for installing PHPMyAdmin
+    digest: 1e188fe53e2a2753778858bb201c802cf9b7ff381fe271094c9e02e216ed103b
+    maintainers:
+    - email: dave@hornigan.pro
+      name: DaveHornigan
+      url: https://github.com/davehornigan
+    name: phpmyadmin
+    sources:
+    - https://github.com/davehornigan/helm-charts/tree/master/charts/phpmyadmin
+    urls:
+    - https://github.com/davehornigan/helm-charts/releases/download/phpmyadmin-5.2.1/phpmyadmin-5.2.1.tgz
+    version: 5.2.1
+generated: "2024-12-16T03:01:03.691874459Z"
