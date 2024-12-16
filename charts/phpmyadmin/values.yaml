@@ -1,0 +1,76 @@
+replicaCount: 1
+namespace: ""
+
+image:
+  repository: docker.io/phpmyadmin
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+initContainers: []
+
+serviceAccount:
+  create: false
+  name: ""
+  automount: true
+  annotations: {}
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+#  runAsUser: 0
+#  runAsGroup: 0
+
+securityContext: {}
+#   capabilities:
+#     drop:
+#     - ALL
+#   readOnlyRootFilesystem: true
+#   runAsNonRoot: true
+#   runAsUser: 1000
+
+revisionHistoryLimit: 0
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: "0.5"
+    memory: 1G
+  requests:
+    cpu: "0.1"
+    memory: 100Mi
+
+livenessProbe: {}
+#  httpGet:
+#    port: 80
+#    path: /
+
+# Additional volumes on the output Deployment definition.
+additionalVolumes: []
+
+# Additional volumeMounts on the output Deployment definition.
+additionalVolumeMounts: []
+
+# https://github.com/phpmyadmin/docker?tab=readme-ov-file#environment-variables-summary
+env:
+  - name: PMA_ARBITRARY
+    value: "1"
+  - name: UPLOAD_LIMIT
+    value: 100M
+  - name: HIDE_PHP_VERSION
+    value: "true"
+envFrom: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

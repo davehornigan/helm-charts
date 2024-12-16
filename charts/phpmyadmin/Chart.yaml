@@ -1,0 +1,11 @@
+apiVersion: v1
+appVersion: "5.2.1"
+description: A Helm chart for installing ESP Home
+name: phpmyadmin
+version: 2024.12.14
+sources:
+  - https://github.com/davehornigan/helm-charts/tree/master/charts/phpmyadmin
+maintainers:
+  - name: DaveHornigan
+    email: dave@hornigan.pro
+    url: https://github.com/davehornigan
