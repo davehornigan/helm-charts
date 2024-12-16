@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: {{ include "esphome.fullname" . }}-config
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.namespace | default $.Release.Namespace }}
   labels:
     {{- include "esphome.labels" . | nindent 4 }}
 spec:

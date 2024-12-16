@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "esphome.fullname" . }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.namespace | default $.Release.Namespace }}
   labels:
     {{- include "esphome.labels" . | nindent 4 }}
   annotations:

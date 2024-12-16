@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "esphome.fullname" . }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.namespace | default $.Release.Namespace }}
   labels:
     {{- include "esphome.labels" . | nindent 4 }}
     {{- with .Values.service.labels }}
