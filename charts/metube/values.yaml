@@ -1,0 +1,71 @@
+replicaCount: 1
+namespace: ""
+
+image:
+  repository: ghcr.io/alexta69/metube
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+initContainers: []
+
+serviceAccount:
+  create: false
+  name: ""
+  automount: true
+  annotations: {}
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+#  runAsUser: 0
+#  runAsGroup: 0
+
+securityContext: {}
+#   capabilities:
+#     drop:
+#     - ALL
+#   readOnlyRootFilesystem: true
+#   runAsNonRoot: true
+#   runAsUser: 1000
+
+revisionHistoryLimit: 0
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: "0.5"
+    memory: 1Gi
+  requests:
+    cpu: "0.1"
+    memory: 20Mi
+
+livenessProbe: {}
+
+# Additional volumes on the output Deployment definition.
+additionalVolumes: []
+
+# Additional volumeMounts on the output Deployment definition.
+additionalVolumeMounts: []
+
+# https://github.com/alexta69/metube?tab=readme-ov-file#configuration-via-environment-variables
+env:
+  - name: DELETE_FILE_ON_TRASHCAN
+    value: "true"
+  - name: DOWNLOAD_DIR
+    value: /downloads
+envFrom: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
