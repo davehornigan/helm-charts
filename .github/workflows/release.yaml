@@ -30,8 +30,10 @@ jobs:
         run: |
           wget -O cr.sh https://gist.githubusercontent.com/davehornigan/d5b08bb632d7e151fb807d6375501b69/raw/cc182571bd7ace86f0f510aaed9520549841fbe4/cr.sh
           chmod +x ./cr.sh
+          owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
+          repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
   
-          args=(--config "cr.yaml")
+          args=(--owner "$owner" --repo "$repo" --config "cr.yaml")
   
           install="$RUNNER_TOOL_CACHE/cr/$(uname -m)"
           echo "$install" >> "$GITHUB_PATH"
