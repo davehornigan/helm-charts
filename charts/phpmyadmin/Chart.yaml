@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: "5.2.1"
 description: A Helm chart for installing PHPMyAdmin
 name: phpmyadmin
-version: 5.2.1
+version: 5.2.1-1
 sources:
   - https://github.com/davehornigan/helm-charts/tree/master/charts/phpmyadmin
 maintainers:

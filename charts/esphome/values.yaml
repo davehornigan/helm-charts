@@ -44,6 +44,8 @@ securityContext: {}
 revisionHistoryLimit: 3
 
 service:
+  labels: {}
+  annotations: {}
   type: ClusterIP
   port: 80
 
