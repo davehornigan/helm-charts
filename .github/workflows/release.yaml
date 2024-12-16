@@ -24,11 +24,26 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v4
         env:
-          GITHUB_TOKEN: "${{ secrets.PAT }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0
-        with:
-          config: cr.yaml
+        run: |
+          wget -O cr.sh https://gist.githubusercontent.com/davehornigan/d5b08bb632d7e151fb807d6375501b69/raw/cc182571bd7ace86f0f510aaed9520549841fbe4/cr.sh
+  
+          args=(--config "cr.yaml")
+  
+          install="$RUNNER_TOOL_CACHE/cr/$(uname -m)"
+          echo "$install" >> "$GITHUB_PATH"
+          args+=(--install-dir "$install")
+  
+          "$GITHUB_ACTION_PATH/cr.sh" "${args[@]}"
+  
+          if [[ -f changed_charts.txt ]]; then
+          cat changed_charts.txt >> "$GITHUB_OUTPUT"
+          fi
+          if [[ -f chart_version.txt ]]; then
+          cat chart_version.txt >> "$GITHUB_OUTPUT"
+          fi
+          rm -f changed_charts.txt chart_version.txt
         env:
-          CR_TOKEN: "${{ secrets.PAT }}"
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

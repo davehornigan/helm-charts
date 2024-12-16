@@ -1,1 +1,11 @@
+pr: true
 skip_existing: true
+charts-dir: /charts
+owner: davehornigan
+git-repo: helm-charts
+git-base-url: "https://api.github.com/"
+git-upload-url: "https://uploads.github.com/"
+pages-branch: "gh-pages"
+pages-index-path: index.yaml
+remote: origin
+packages-with-index: false
