@@ -20,7 +20,7 @@ entries:
   - apiVersion: v1
     appVersion: "2024-12-14"
     created: "2024-12-16T02:15:26.310835086Z"
-    description: A Helm chart for installing ESP Home
+    description: A Helm chart for installing MeTube
     digest: 08b92fd5d8737f637d305fe6466b428c9ec326ea6265053a5ed6f980eab5795e
     maintainers:
     - email: dave@hornigan.pro
@@ -31,21 +31,5 @@ entries:
     - https://github.com/davehornigan/helm-charts/tree/master/charts/metube
     urls:
     - https://github.com/davehornigan/helm-charts/releases/download/metube-2024.12.14/metube-2024.12.14.tgz
-    version: 2024.12.14
-  phpmyadmin:
-  - apiVersion: v1
-    appVersion: 5.2.1
-    created: "2024-12-16T02:47:47.134708294Z"
-    description: A Helm chart for installing ESP Home
-    digest: 358b43d93bcdbbbb56e2c4a4d3bc8ceab4d2a7962e6c911d4e088847bb4add8e
-    maintainers:
-    - email: dave@hornigan.pro
-      name: DaveHornigan
-      url: https://github.com/davehornigan
-    name: phpmyadmin
-    sources:
-    - https://github.com/davehornigan/helm-charts/tree/master/charts/phpmyadmin
-    urls:
-    - https://github.com/davehornigan/helm-charts/releases/download/phpmyadmin-2024.12.14/phpmyadmin-2024.12.14.tgz
     version: 2024.12.14
 generated: "2024-12-16T02:47:47.134713524Z"
