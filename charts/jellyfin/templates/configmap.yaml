@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-cm
+  namespace: {{ .Values.namespace | default $.Release.Namespace }}
+data:
+  JELLYFIN_DATA_DIR: "{{ .Values.envVars.dataDir }}"
+  JELLYFIN_CONFIG_DIR: "{{ .Values.envVars.configDir }}"
+  JELLYFIN_CACHE_DIR: "{{ .Values.envVars.cacheDir }}"
+  JELLYFIN_LOG_DIR: "{{ .Values.envVars.logDir }}"
