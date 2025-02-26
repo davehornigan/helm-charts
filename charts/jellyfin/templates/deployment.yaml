@@ -78,20 +78,20 @@ spec:
             {{- end }}
       volumes:
         {{- if .Values.configVolumeClaim.create }}
-            - name: config
-              persistentVolumeClaim:
-                claimName: {{ include "jellyfin.fullname" . }}-config
+        - name: config
+          persistentVolumeClaim:
+             claimName: {{ include "jellyfin.fullname" . }}-config
         {{- end }}
         {{- if .Values.dataVolumeClaim.create }}
-            - name: data
-              persistentVolumeClaim:
-                claimName: {{ include "jellyfin.fullname" . }}-data
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "jellyfin.fullname" . }}-data
         {{- end }}
         {{- range .Values.additionalVolumes }}
-            - {{- toYaml . | nindent 8 }}
+        - {{- toYaml . | nindent 10 }}
         {{- end }}
         {{- if not .Values.configVolumeClaim.create }}
-          []
+        []
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

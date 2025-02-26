@@ -68,12 +68,6 @@ autoscaling:
 # Additional volumes on the output Deployment definition.
 additionalVolumes: []
 
-customFontsVolumeMount:
-  enabled: false
-  name: "fonts"
-  mountPath: "/usr/local/share/fonts/custom"
-
-
 # Additional volumeMounts on the output Deployment definition.
 additionalVolumeMounts: []
 
