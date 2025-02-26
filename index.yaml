@@ -31,6 +31,22 @@ entries:
     urls:
     - https://github.com/davehornigan/helm-charts/releases/download/esphome-2024.11.3-1/esphome-2024.11.3-1.tgz
     version: 2024.11.3-1
+  jellyfin:
+  - apiVersion: v1
+    appVersion: "2025022405"
+    created: "2025-02-26T19:07:49.746175Z"
+    description: A Helm chart for installing ESP Home
+    digest: a4348fe22d116f0044aae95e698f5b9cb2ca643e078d10112d8dad4488bfbb45
+    maintainers:
+    - email: dave@hornigan.pro
+      name: DaveHornigan
+      url: https://github.com/davehornigan
+    name: jellyfin
+    sources:
+    - https://github.com/davehornigan/helm-charts/tree/master/charts/jellyfin
+    urls:
+    - https://github.com/davehornigan/helm-charts/releases/download/jellyfin-1.0.0/jellyfin-1.0.0.tgz
+    version: 1.0.0
   metube:
   - apiVersion: v1
     appVersion: "2024-12-14"
@@ -93,4 +109,4 @@ entries:
     urls:
     - https://github.com/davehornigan/helm-charts/releases/download/phpmyadmin-5.2.1-1/phpmyadmin-5.2.1-1.tgz
     version: 5.2.1-1
-generated: "2024-12-16T03:32:15.04971192Z"
+generated: "2025-02-26T19:07:49.746197352Z"
