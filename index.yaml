@@ -34,6 +34,21 @@ entries:
   jellyfin:
   - apiVersion: v1
     appVersion: "2025022405"
+    created: "2025-02-26T19:47:36.595200872Z"
+    description: A Helm chart for installing Jellyfin
+    digest: ebdedacc5b4b9b610657c80804c5ce65c6c13eeede06aec3063c4d22677ac266
+    maintainers:
+    - email: dave@hornigan.pro
+      name: DaveHornigan
+      url: https://github.com/davehornigan
+    name: jellyfin
+    sources:
+    - https://github.com/davehornigan/helm-charts/tree/master/charts/jellyfin
+    urls:
+    - https://github.com/davehornigan/helm-charts/releases/download/jellyfin-1.0.1/jellyfin-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: "2025022405"
     created: "2025-02-26T19:07:49.746175Z"
     description: A Helm chart for installing ESP Home
     digest: a4348fe22d116f0044aae95e698f5b9cb2ca643e078d10112d8dad4488bfbb45
@@ -109,4 +124,4 @@ entries:
     urls:
     - https://github.com/davehornigan/helm-charts/releases/download/phpmyadmin-5.2.1-1/phpmyadmin-5.2.1-1.tgz
     version: 5.2.1-1
-generated: "2025-02-26T19:07:49.746197352Z"
+generated: "2025-02-26T19:47:36.595223855Z"
