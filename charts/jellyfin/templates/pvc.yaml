@@ -1,0 +1,37 @@
+{{- if .Values.configVolumeClaim.create }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "jellyfin.fullname" . }}-config
+  namespace: {{ .Values.namespace | default $.Release.Namespace }}
+  labels:
+    {{- include "jellyfin.labels" . | nindent 4 }}
+spec:
+  {{- if .Values.configVolumeClaim.storageClass }}
+  storageClassName: {{ .Values.configVolumeClaim.storageClass }}
+  {{- end }}
+  accessModes:
+    {{- toYaml .Values.configVolumeClaim.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.configVolumeClaim.size }}
+  {{- end }}
+---
+{{- if .Values.dataVolumeClaim.create }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "jellyfin.fullname" . }}-data
+  namespace: {{ .Values.namespace | default $.Release.Namespace }}
+  labels:
+    {{- include "jellyfin.labels" . | nindent 4 }}
+spec:
+  {{- if .Values.configVolumeClaim.storageClass }}
+  storageClassName: {{ .Values.configVolumeClaim.storageClass }}
+  {{- end }}
+  accessModes:
+    {{- toYaml .Values.dataVolumeClaim.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.configVolumeClaim.size }}
+  {{- end }}
